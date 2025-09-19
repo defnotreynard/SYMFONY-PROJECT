@@ -1,17 +1,90 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        JOJEANS Events
+      {% endblock %}
+    </title>
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Animations -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body class="bg-[#e6f9f6] text-gray-800 font-sans">
+    <!-- ✅ Navbar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a href="{{ path('home') }}" class="flex-shrink-0 flex items-center">
+              <span class="text-[#00bfa6] text-2xl font-bold">JOJEANS</span>
+              <span class="ml-1 text-gray-600 text-xl font-medium">Events</span>
+            </a>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+            <a href="{{ path('home') }}" class="text-[#00bfa6] px-3 py-2 font-medium">Home</a>
+            <a href="#about" class="text-gray-600 hover:text-[#00bfa6] px-3 py-2 font-medium">About</a>
+            <a href="#services" class="text-gray-600 hover:text-[#00bfa6] px-3 py-2 font-medium">Services</a>
+            <a href="#packages" class="text-gray-600 hover:text-[#00bfa6] px-3 py-2 font-medium">Packages</a>
+            <a href="#gallery" class="text-gray-600 hover:text-[#00bfa6] px-3 py-2 font-medium">Gallery</a>
+            <a href="#booking" class="bg-[#00bfa6] text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition">Book Now</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="-mr-2 flex items-center md:hidden">
+            <button id="menu-toggle" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#00bfa6]"><i data-feather="menu"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md px-6 py-4">
+        <a href="{{ path('home') }}" class="block py-2 hover:text-[#00bfa6]">Home</a>
+        <a href="#about" class="block py-2 hover:text-[#00bfa6]">About</a>
+        <a href="#services" class="block py-2 hover:text-[#00bfa6]">Services</a>
+        <a href="#packages" class="block py-2 hover:text-[#00bfa6]">Packages</a>
+        <a href="#gallery" class="block py-2 hover:text-[#00bfa6]">Gallery</a>
+        <a href="#booking" class="block py-2 hover:text-[#00bfa6]">Book Now</a>
+      </div>
+    </nav>
+
+    <!-- ✅ Main -->
+    <main class="container mx-auto py-12 px-6">
+      {% block body %}
+      {% endblock %}
+    </main>
+
+    <!-- ✅ Footer -->
+    <footer class="bg-[#00bfa6] text-white py-6 mt-12">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        <p>© 2025 JOJEANS Events. All Rights Reserved.</p>
+        <div class="flex gap-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-[#80dfd3]">Facebook</a>
+          <a href="#" class="hover:text-[#80dfd3]">Instagram</a>
+          <a href="#" class="hover:text-[#80dfd3]">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      feather.replace()
+      AOS.init({ duration: 800, once: true })
+      const menuToggle = document.getElementById('menu-toggle')
+      const mobileMenu = document.getElementById('mobile-menu')
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden')
+      })
+    </script>
+  </body>
 </html>
