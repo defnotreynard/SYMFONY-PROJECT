@@ -1,0 +1,72 @@
+{% block body %}
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">Our Gallery</h2>
+        <div class="w-20 h-1 bg-primary mx-auto"></div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex justify-center mb-8" data-aos="fade-up">
+        <div class="inline-flex rounded-md shadow-sm">
+          <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-primary focus:text-primary">All</button>
+          <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-200 bg-white text-gray-700 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-primary focus:text-primary">Weddings</button>
+          <button type="button" class="px-4 py-2 text-sm font-medium border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-primary focus:text-primary">Corporate</button>
+          <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-200 bg-white text-gray-700 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-primary focus:text-primary">Birthdays</button>
+          <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-primary focus:text-primary">Others</button>
+        </div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="gallery-item rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <img src="http://static.photos/wedding/640x360/4" alt="Wedding Event" class="w-full h-64 object-cover" />
+          <div class="p-4 bg-white">
+            <h3 class="text-lg font-medium text-gray-800 mb-1">Garden Wedding</h3>
+            <p class="text-gray-600 text-sm">Floral arrangements and outdoor setup</p>
+          </div>
+        </div>
+        <div class="gallery-item rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+          <img src="http://static.photos/corporate/640x360/1" alt="Corporate Event" class="w-full h-64 object-cover" />
+          <div class="p-4 bg-white">
+            <h3 class="text-lg font-medium text-gray-800 mb-1">Annual Conference</h3>
+            <p class="text-gray-600 text-sm">Professional setup for 200 attendees</p>
+          </div>
+        </div>
+        <div class="gallery-item rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="300">
+          <img src="http://static.photos/birthday/640x360/1" alt="Birthday Party" class="w-full h-64 object-cover" />
+          <div class="p-4 bg-white">
+            <h3 class="text-lg font-medium text-gray-800 mb-1">18th Birthday</h3>
+            <p class="text-gray-600 text-sm">Elegant debut celebration</p>
+          </div>
+        </div>
+        <div class="gallery-item rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <img src="http://static.photos/wedding/640x360/5" alt="Wedding Event" class="w-full h-64 object-cover" />
+          <div class="p-4 bg-white">
+            <h3 class="text-lg font-medium text-gray-800 mb-1">Beach Wedding</h3>
+            <p class="text-gray-600 text-sm">Sunset ceremony by the sea</p>
+          </div>
+        </div>
+        <div class="gallery-item rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+          <img src="http://static.photos/corporate/640x360/2" alt="Corporate Event" class="w-full h-64 object-cover" />
+          <div class="p-4 bg-white">
+            <h3 class="text-lg font-medium text-gray-800 mb-1">Product Launch</h3>
+            <p class="text-gray-600 text-sm">Innovative display and lighting</p>
+          </div>
+        </div>
+        <div class="gallery-item rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="300">
+          <img src="http://static.photos/birthday/640x360/2" alt="Birthday Party" class="w-full h-64 object-cover" />
+          <div class="p-4 bg-white">
+            <h3 class="text-lg font-medium text-gray-800 mb-1">Kids Party</h3>
+            <p class="text-gray-600 text-sm">Colorful themed celebration</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10" data-aos="fade-up">
+        <button class="border-2 border-primary text-primary px-6 py-3 rounded-full font-medium hover:bg-primary hover:text-white transition">View More Events</button>
+      </div>
+    </div>
+  </section>
+{% endblock %}
