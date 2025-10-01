@@ -1,3 +1,4 @@
+# config/routes/web_profiler.yaml
 web_profiler_wdt:
     resource: "@WebProfilerBundle/Resources/config/routing/wdt.xml"
     prefix: /_wdt
